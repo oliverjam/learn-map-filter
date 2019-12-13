@@ -39,6 +39,8 @@ filter(x => x > 1, [1, 2, 3]);
 
 ### Part Three: Pokémon
 
+![Example of solution working](https://user-images.githubusercontent.com/9408641/70819859-2b4b1c80-1dcf-11ea-82b1-49918519f677.gif)
+
 Open `challenge/pokemon.html` in your browser. You should see an input and a list of pokémon names. Open `challenge/pokemon.js` in your editor. The code is looping over an array of pokémon and rendering their names to the list on the page.
 
 Unfortunately the data isn't great: there's an unnecessary `"."` character at the end of each name. Use your `map` function to create a new array where the names have the `"."` removed.
