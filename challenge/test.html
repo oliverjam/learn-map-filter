@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Open the console with <kbd>F12</kbd></h1>
+    <script src="./map-filter.js"></script>
+    <script>
+      function equal(a, b, msg) {
+        if (a === b) {
+          console.info(`Got ${a}, expected ${b}`);
+        } else {
+          console.error(`Got ${a}, expected ${b}\n${msg || ""}`);
+        }
+      }
+      function notEqual(a, b, msg = `${a} should not equal ${b}`) {
+        if (a !== b) {
+          console.info("✔︎ " + msg);
+        } else {
+          console.error("× " + msg);
+        }
+      }
+      function test(name, cb) {
+        console.group(name);
+        cb();
+        console.groupEnd();
+      }
+
+      test("map should transform each item in an array", () => {
+        const input = ["a", "b", "c"];
+        const result = map(letter => letter.toUpperCase(), input);
+        equal(result[0], "A");
+        equal(result[1], "B");
+        equal(result[2], "C");
+      });
+
+      test("filter should remove items that don't pass the test fn", () => {
+        const input = ["a", "b", "c"];
+        const result = filter(letter => letter === "c", input);
+        equal(result.length, 1, "Filtered array should only contain one item");
+        equal(result[0], "c");
+      });
+    </script>
+  </body>
+</html>

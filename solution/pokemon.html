@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pokémon</title>
+    <style>
+      body {
+        display: grid;
+        justify-content: center;
+        padding: 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        color: hsl(220, 10%, 20%);
+        background-color: hsl(220, 10%, 98%);
+      }
+      input {
+        display: block;
+        margin-top: 0.25rem;
+        padding: 0.25rem;
+        font: inherit;
+      }
+      ul {
+        font-size: 1.125rem;
+        padding-left: 1.25rem;
+        list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" width="0.75em" height="0.75em" stroke="none"><path d="M2,16 a 6 6 0 0 1 28 0 Z" fill="hsl(0, 60%, 50%)"></path><path d="M2,16 a 6 6 0 0 0 28 0 Z" fill="white"></path><line x1="2" y1="16" x2="30" y2="16" stroke="black"></line><circle cx="16" cy="16" r="6" fill="gray" stroke="black"></circle><circle cx="16" cy="16" r="3" fill="white" stroke="black"></circle><circle cx="16" cy="16" r="14" fill="none" stroke="black"></circle></svg>');
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pokémon</h1>
+    <form>
+      <label for="poke-filter">Filter</label>
+      <input id="poke-filter" type="text" />
+    </form>
+    <ul id="pokemon-list"></ul>
+  </body>
+  <script src="map-filter.js"></script>
+  <script src="./pokemon.js"></script>
+</html>
